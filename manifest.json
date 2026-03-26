@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "WS Sniffer",
+  "version": "1.0",
+  "description": "Intercept WebSocket messages",
+  "permissions": [],
+  "host_permissions": [
+    "https://onlyfans.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://onlyfans.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["inject.js"],
+      "matches": ["https://onlyfans.com/*"]
+    }
+  ]
+}
